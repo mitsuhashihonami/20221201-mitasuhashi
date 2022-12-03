@@ -29,15 +29,17 @@
         </tr>
         @foreach ($todos as $todo)
         <tr>
-          <td class="padding">{{ $todo->created_at }}</td>
-          <form action="/todo/update" method="POST">
+          <form action="{{ route('update') }}" method="POST">
             @csrf
+            @method('put')
+          <td class="padding">{{ $todo->created_at }}</td>
+          
             <td><input type="text" name="name" value="{{ $todo->name }}">
             </td>
-          </form>
           <td class="padding">
             <button type="submit">更新</button>
           </td>
+          </form>
           <form action="{{ route('destroy',$todo->id) }}" method="POST">
             @csrf
             <td class="padding">
