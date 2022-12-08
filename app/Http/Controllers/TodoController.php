@@ -37,9 +37,9 @@ class TodoController extends Controller
 
      public function update(Request $request)
      {
-        $todos = Todo::find($request->id);
-        $todos->name = $request->input('name');
-        $todos->save();
+        Todo::find($request->id)->update([
+            'name' => $request->name
+        ]);
         return redirect('todo');
 
      }

@@ -29,9 +29,9 @@
         </tr>
         @foreach ($todos as $todo)
         <tr>
-          <form action="{{ route('update') }}" method="POST">
+          <form action="/update{id}" method="POST">
             @csrf
-            @method('put')
+            
           <td class="padding">{{ $todo->created_at }}</td>
           
             <td><input type="text" name="name" value="{{ $todo->name }}">
