@@ -21,7 +21,7 @@
 
     .card {
       background-color: #fff;
-      width: 800px;
+      width: 60%;
       margin: auto;
       padding: 20px;
       border-radius: 5px;
@@ -65,11 +65,16 @@
 
     .update_btn {
       color: #fa9770;
-      border-color: #fa9770;
       background-color: #fff;
       border-radius: 5px;
       width: 60px;
       height: 40px;
+      border-color: #fa9770;
+    }
+
+    .update_value {
+      width: 120%;
+      height: 30px;
     }
 
     .delete_btn {

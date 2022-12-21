@@ -4,7 +4,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>COACHTECH</title>
+  <title>TodoList</title>
+  <link rel="stylesheet" href="public/css/reset.css">
   <link rel="stylesheet" href="public/css/style.css">
 </head>
 
@@ -37,7 +38,7 @@
           <td class="padding1">{{ $todo->created_at }}</td>
           <form action="{{ route('todo.update',$todo->id) }}" method="POST">
             @csrf
-            <td class="padding1"><input type="text" name="name" value="{{ $todo->name }}"></td>
+            <td class="padding1"><input type="text" name="name" class="update_value" value="{{ $todo->name }}"></td>
             <td class="padding2">
               <button type="submit" class="update_btn">更新</button>
             </td>
