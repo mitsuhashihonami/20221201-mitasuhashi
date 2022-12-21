@@ -8,51 +8,39 @@ use App\Http\Requests\TodoRequest;
 
 class TodoController extends Controller
 {
-    
+
     public function index()
     {
-       
+
         $todos = Todo::all();
 
-        return view('todo', compact('todos'));
+        return view('index', compact('todos'));
     }
 
-   
 
-     public function store(Request $request)
-     {
-        $todos = new Todo;
-        $todos->name = $request->input('name');
-        $todos->save();
-        return redirect('todo');
-        
-     }
 
-    public function edit(Request $request)
+    public function create(TodoRequest $request)
     {
-        $todos = Todo::find($request->id);
-
-        return view('todo', compact('todos'));
+        $form = $request->all();
+        unset($form['_token']);
+        Todo::create($form);
+        return redirect('/');
     }
 
-     public function update(Request $request)
-     {
-        Todo::find($request->id)->update([
-            'name' => $request->name
-        ]);
-        return redirect('todo');
 
-     }
-
-    public function destroy($id)
+    public function update(Request $request)
     {
-        $todos = Todo::find($id);
-        $todos->delete();
-        return redirect('todo');
+        $form = $request->all();
+        unset($form['_token']);
+        Todo::where('id', $request->id)->update($form);
+        return redirect('/');
+
     }
-    
 
-   
-   
+    public function delete(Request $request)
+    {
+        Todo::find($request->id)->delete();
+        return redirect('/');
 
+    }
 }

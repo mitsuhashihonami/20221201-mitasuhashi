@@ -15,9 +15,13 @@
       background-color: #333399;
     }
 
+    .ttl {
+      margin-left: 10%;
+    }
+
     .card {
       background-color: #fff;
-      width: 600px;
+      width: 800px;
       margin: auto;
       padding: 20px;
       border-radius: 5px;
@@ -25,10 +29,15 @@
     }
 
     .create {
-      width: 500px;
+      width: 70%;
       height: 30px;
-      margin-right: 10px;
-      color: #C0C0C0;
+      padding: 5px;
+      border-radius: 5px;
+      border: 1px solid #ccc;
+      appearance: none;
+      font-size: 14px;
+      outline: none;
+      margin-left: 10%;
     }
 
     .create__btn {
@@ -38,6 +47,7 @@
       border-radius: 5px;
       width: 60px;
       height: 40px;
+      margin-left: 30px;
     }
 
     .table {
@@ -45,8 +55,30 @@
       padding-top: 30px;
     }
 
-    .padding {
-      padding: 20px 0;
+    .padding1 {
+      padding: 0 50px;
+    }
+
+    .padding2 {
+      padding: 0 20px;
+    }
+
+    .update_btn {
+      color: #fa9770;
+      border-color: #fa9770;
+      background-color: #fff;
+      border-radius: 5px;
+      width: 60px;
+      height: 40px;
+    }
+
+    .delete_btn {
+      color: #71fadc;
+      border-color: #71fadc;
+      background-color: #fff;
+      border-radius: 5px;
+      width: 60px;
+      height: 40px;
     }
   </style>
 </body>
