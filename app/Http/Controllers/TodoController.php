@@ -12,11 +12,16 @@ class TodoController extends Controller
 
     public function index()
     {
+<<<<<<< HEAD
         $user = Auth::user();
         $todos = Todo::paginate(4);
         $param = ['todos' => $todos, 'user' => $user];
 
         return view('index', $param);
+=======
+        $todos = Todo::all();
+        return view('/todo', compact('todos'));
+>>>>>>> origin/main
     }
 
 
@@ -26,7 +31,11 @@ class TodoController extends Controller
         $form = $request->all();
         unset($form['_token']);
         Todo::create($form);
+<<<<<<< HEAD
         return redirect('/home');
+=======
+        return redirect('/todo');
+>>>>>>> origin/main
     }
 
 
@@ -35,14 +44,22 @@ class TodoController extends Controller
         $form = $request->all();
         unset($form['_token']);
         Todo::where('id', $request->id)->update($form);
+<<<<<<< HEAD
         return redirect('/home');
 
+=======
+        return redirect('/todo');
+>>>>>>> origin/main
     }
 
     public function delete(Request $request)
     {
         Todo::find($request->id)->delete();
+<<<<<<< HEAD
         return redirect('/home');
 
+=======
+        return redirect('/');
+>>>>>>> origin/main
     }
 }
