@@ -13,9 +13,28 @@
   @extends('todo.default')
 
   @section('content')
+
+
   <div class="body">
     <div class="card">
-      <h2 class="ttl">Todo List</h2>
+      <div class="flex">
+        <h2 class="ttl">Todo List</h2>
+        @if (Auth::check())
+        <p class="flex_end">「{{$user->name}}」でログイン中</p>
+        @else
+        <p class="flex_end">ログインしてください。（<a href="/login">ログイン</a>｜
+          <a href="/register">登録</a>）
+        </p>
+        @endif
+        <form method="POST" action="{{ route('logout') }}">
+          @csrf
+
+          <x-responsive-nav-link :href="route('logout')" onclick="event.preventDefault();
+                                        this.closest('form').submit();">
+            {{ __('ログアウト') }}
+          </x-responsive-nav-link>
+        </form>
+      </div>
       <form action="{{ route('todo.create') }}" method="post">
         @csrf
         <input type="text" class="create" name="name">

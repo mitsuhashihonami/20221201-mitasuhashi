@@ -28,6 +28,15 @@
       margin-top: 15vw;
     }
 
+    .flex {
+      display: flex;
+      justify-content: space-between;
+    }
+
+    .flex_end{
+     
+    }
+    
     .create {
       width: 70%;
       height: 30px;
